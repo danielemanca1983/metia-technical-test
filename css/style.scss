@@ -1,0 +1,138 @@
+// Google font: Inter import
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cards-container {
+    display: grid;
+    grid-gap: 30px;
+    margin: 20px auto;
+    max-width: 1560px;
+    padding: 0 1%;
+    grid-template-columns: repeat(3, 1fr);
+    .card {
+        height: 390px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        &__image {
+            img {
+                width: 160px;
+                height: 160px;
+                margin: 20px 0;
+            }
+        }
+
+        &__text-content {
+            display: flex;
+            height: 160px;
+            flex-direction: column;
+            border-top: 1px solid black;
+
+            &__title {
+                padding: 15px 0;
+                font: normal normal normal 28px/32px Inter;
+            }
+
+            &__desc {
+                font: normal normal normal 16px/24px Inter;
+            }
+
+            &__cta {
+                margin-top: auto;
+    
+                img {
+                    width: 17px;
+                    height: 17px;
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+                display: flex;
+                color: black;
+                align-items: center;
+                text-decoration: none;
+                font: normal normal bold 20px/22px Inter;
+            }
+
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .cards-container {
+        .card {
+            //height: 390px;
+            
+            &__text-content {
+                height: 200px;
+            }
+    
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        .card {
+            height: auto;
+            flex-direction: row;
+            &__image {
+                img {
+                    width: 160px;
+                    height: 160px;
+                }
+            }
+
+            &__text-content {
+                width: calc(100% - 160px);
+                margin-left: 20px;
+
+                &__title {
+                    font-size: 24px;
+                }
+
+                &__desc {
+                    font-size: 15px;
+                }
+
+                &__cta {
+                    margin-top: 50px;
+                }
+
+            }
+    
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .cards-container {
+        .card {
+            &__image {
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin: 0;
+                }
+            }
+
+            &__text-content {
+                width: calc(100% - 60px);
+
+                &__cta {
+                    margin-top: 25px;
+                }
+
+            }
+
+    
+        }
+    }
+}
